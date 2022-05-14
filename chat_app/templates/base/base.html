@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
+    <!--  All snippets are MIT license http://bootdey.com/license -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/Chat.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Django Chat App</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">
+        <img src="{% static 'images/134914.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+        Django Chat App
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link " href="#">Rooms</a>
+        </div>
+    </div>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#">
+                Login
+            </a>
+        </li>
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    Logout
+                </a>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    Register
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+
+</nav>
+
+{% block page_content %}
+
+{% endblock %}
+</body>
+</html>
